@@ -10,78 +10,54 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #2980b9, #6dd5fa); /* Tło gradientowe */
       overflow: hidden; /* Ukryj przepływ, aby animacje były płynne */
     }
 
-    /* Style dla kontenera zawartości */
-    .container {
+    /* Animacja dla słońca */
+    @keyframes sunAnimation {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Stylowanie tła */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.9); /* Przezroczysty biały tło */
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Cień */
+      height: 100%;
+      background: linear-gradient(to bottom, #2980b9, #6dd5fa); /* Tło gradientowe */
+      z-index: -1; /* Wysuwamy tło na dół, za inną zawartość */
     }
 
-    /* Style dla nagłówka */
-    header {
-      text-align: center;
-      margin-bottom: 20px;
+    /* Stylowanie słońca */
+    .sun {
+      position: absolute;
+      top: 50px;
+      left: -100px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle at center, #ffd700 0%, rgba(255, 215, 0, 0) 80%); /* Gradient promieniowy */
+      border-radius: 50%; /* Okrągłe słońce */
+      animation: sunAnimation 20s linear infinite; /* Animacja obrotu */
     }
 
-    /* Style dla sekcji */
-    section {
-      margin-bottom: 20px;
-    }
-
-    /* Style dla mapy */
-    iframe {
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* Style dla linków kontaktowych */
-    a {
-      color: #2980b9;
-      text-decoration: none;
-    }
-
-    /* Animacja dla tytułu */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Animacja dla sekcji */
-    @keyframes slideIn {
-      from {
-        transform: translateY(-50px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    /* Stylowanie tytułu */
-    h1 {
-      animation: fadeIn 1s ease-out;
-    }
-
-    /* Stylowanie sekcji */
-    section {
-      animation: slideIn 1s ease-out;
+    /* Stylowanie plaży */
+    .beach {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background-color: #f1c40f; /* Kolor piasku */
+      z-index: -1; /* Wysuwamy plażę na dół, za inną zawartość */
     }
   </style>
 </head>
 <body>
+  <div class="background"></div> <!-- Tło -->
+  <div class="sun"></div> <!-- Słońce -->
+  <div class="beach"></div> <!-- Plaża -->
   <div class="container">
     <header>
       <h1>Witaj na stronie Happywind - Twój Pensjonat nad Morzem</h1>
