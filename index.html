@@ -5,13 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happywind - Twój Pensjonat nad Morzem</title>
   <style>
-    /* Dodatkowe style */
-    .container {
+    /* Dodatkowe style dla całej strony */
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Ukryj przepływ, aby animacje były płynne */
+      background: #87CEEB; /* Niebieskie tło */
+    }
+
+    /* Stylowanie tła z plażą */
+    .beach-background {
+      position: absolute;
+      top: 50%; /* Ustaw tło na środku ekranu */
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 100%;
+      height: 100%;
+      background-image: url('https://source.unsplash.com/1920x1080/?beach');
+      background-size: cover; /* Dopasuj tło do rozmiaru okna przeglądarki */
+      z-index: -1; /* Wysuwamy tło na dół, za inną zawartość */
+      animation: beachAnimation 20s linear infinite; /* Animacja ruchu plaży */
+    }
+
+    /* Animacja ruchu plaży */
+    @keyframes beachAnimation {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 0; }
+    }
+
+    /* Stylowanie słońca */
+    .sun {
+      position: absolute;
+      top: 20%;
+      left: 80%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      background-image: url('https://emojicdn.elk.sh/🌞');
+      background-size: cover; /* Dopasuj tło do rozmiaru okna przeglądarki */
+      z-index: -1; /* Wysuwamy słońce na dół, za inną zawartość */
+      animation: sunAnimation 8s linear infinite; /* Animacja obrotu słońca */
+    }
+
+    /* Animacja obrotu słońca */
+    @keyframes sunAnimation {
+      0% { transform: translate(-50%, -50%) rotate(0); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* Stylowanie plaży */
+    .beach {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30%;
+      background-color: #f1c40f; /* Kolor piasku */
+      z-index: -1; /* Wysuwamy plażę na dół, za inną zawartość */
     }
   </style>
 </head>
 <body>
+  <div class="beach-background"></div> <!-- Tło z plażą -->
+  <div class="sun"></div> <!-- Słońce -->
+  <div class="beach"></div> <!-- Plaża -->
   <div id="root" class="container">
     <header>
       <h1>Witaj na stronie Happywind - Twój Pensjonat nad Morzem</h1>
@@ -41,15 +98,5 @@
       </section>
     </main>
   </div>
-  <script>
-    // Kod JavaScript
-    function App() {
-      return (
-        <div></div> // Nie jest potrzebne, ponieważ renderowanie odbywa się już w pliku HTML
-      );
-    }
-
-    ReactDOM.render(<App />, document.getElementById("root"));
-  </script>
 </body>
 </html>
