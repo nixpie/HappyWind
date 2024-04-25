@@ -4,99 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happywind - Twój Pensjonat nad Morzem</title>
-  <style>
-    /* Dodatkowe style dla całej strony */
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden; /* Ukryj przepływ, aby animacje były płynne */
-      background: #87CEEB; /* Niebieskie tło */
-    }
-
-    /* Stylowanie tła z plażą */
-    .beach-background {
-      position: absolute;
-      top: 50%; /* Ustaw tło na środku ekranu */
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      height: 100%;
-      background-image: url('https://source.unsplash.com/1920x1080/?beach');
-      background-size: cover; /* Dopasuj tło do rozmiaru okna przeglądarki */
-      z-index: -1; /* Wysuwamy tło na dół, za inną zawartość */
-      animation: beachAnimation 20s linear infinite; /* Animacja ruchu plaży */
-    }
-
-    /* Animacja ruchu plaży */
-    @keyframes beachAnimation {
-      0% { background-position: 0 0; }
-      100% { background-position: 100% 0; }
-    }
-
-    /* Stylowanie słońca */
-    .sun {
-      position: absolute;
-      top: 20%;
-      left: 80%;
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      background-image: url('https://emojicdn.elk.sh/🌞');
-      background-size: cover; /* Dopasuj tło do rozmiaru okna przeglądarki */
-      z-index: -1; /* Wysuwamy słońce na dół, za inną zawartość */
-      animation: sunAnimation 8s linear infinite; /* Animacja obrotu słońca */
-    }
-
-    /* Animacja obrotu słońca */
-    @keyframes sunAnimation {
-      0% { transform: translate(-50%, -50%) rotate(0); }
-      100% { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-    /* Stylowanie plaży */
-    .beach {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 30%;
-      background-color: #f1c40f; /* Kolor piasku */
-      z-index: -1; /* Wysuwamy plażę na dół, za inną zawartość */
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="beach-background"></div> <!-- Tło z plażą -->
-  <div class="sun"></div> <!-- Słońce -->
-  <div class="beach"></div> <!-- Plaża -->
-  <div id="root" class="container">
+  <div class="container">
     <header>
-      <h1>Witaj na stronie Happywind - Twój Pensjonat nad Morzem</h1>
+      <h1>Witaj w Happywind!</h1>
+      <p>Twój Pensjonat nad Morzem</p>
     </header>
+
     <main>
-      <div style="width: 100%">
-        <iframe 
-          width="100%" 
-          height="600" 
-          frameborder="0" 
-          scrolling="no" 
-          marginheight="0" 
-          marginwidth="0" 
-          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Stefana%20%C5%BBeromskiego%2020,%2072-420%20Dziwn%C3%B3w+(Happy%20Wind%20Pokoje%20Go%C5%9Bcinne%20nad%20morzem)&amp;t=k&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-        </iframe>
-      </div>
-      <section>
-        <h2>Adres:</h2>
-        <p>Stefana Żeromskiego 20</p>
-        <p>72-420 Dziwnów</p>
-        <p>Zachodniopomorskie</p>
+      <section class="hero">
+        <div class="hero-image">
+          <img src="https://source.unsplash.com/1920x1080/?beach" alt="Plaża i morze">
+        </div>
+        <div class="hero-content">
+          <h2>Odpocznij i zrelaksuj się w Happywind!</h2>
+          <p>Oferujemy komfortowe pokoje, pyszne jedzenie i idealną lokalizację tuż przy plaży.</p>
+          <a href="#" class="btn">Sprawdź ofertę</a>
+        </div>
       </section>
-      <section>
-        <h2>Kontakt:</h2>
-        <p>Tel: <a href="tel:+48798022443">798 022 443</a></p>
-        <p>Email: <a href="mailto:biuro@villaresorts.pl">biuro@villaresorts.pl</a></p>
+
+      <section class="o-nas">
+        <h2>O nas</h2>
+        <p>Szukasz idealnego miejsca na wypoczynek nad morzem? Pragniesz uciec od zgiełku miasta i zrelaksować się w otoczeniu natury? Pensjonat Happywind w Dziwnówku to idealne miejsce dla Ciebie!</p>
+        <p>Oferujemy komfortowe pokoje i apartamenty dla osób indywidualnych, rodzin i grup. Pokoje są wyposażone w łazienkę, telewizor, Wi-Fi oraz balkon lub taras. Goście mają do dyspozycji również kuchnię, jadalnię, ogród z grillem i plac zabaw dla dzieci.</p>
+      </section>
+
+      <section class="lokalizacja">
+        <h2>Lokalizacja</h2>
+        <p>Pensjonat Happywind znajduje się w cichej i spokojnej okolicy, zaledwie 200 metrów od plaży. W pobliżu znajdują się również sklepy, restauracje i kawiarnie.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3203.854517445945!2d14.979099349999993!3d54.05422929999999!2m3!1f0!2d14.979099349999993!3d54.05422929999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1d14.979099349999993!2d54.05422929999999!5s+HappyWind+Dziwnówek&output=embed&w=300&h=200&frameborder=0&allowfullscreen" width="300" height="200" style="border:0;" allowfullscreen></iframe>
+      </section>
+
+      <section class="kontakt">
+        <h2>Kontakt</h2>
+        <p>Aby dokonać rezerwacji lub uzyskać więcej informacji, prosimy o kontakt:</p>
+        <ul>
+          <li>Telefon: <a href="tel:+48798022443">798 022 443</a></li>
+          <li>Email: <a href="mailto:biuro@villaresorts.pl">biuro@villaresorts.pl</a></li>
+        </ul>
       </section>
     </main>
+
+    <footer>
+      <p>&copy; 2024 Happywind</p>
+    </footer>
   </div>
-</body>
-</html>
+
+  <script src="scripts.js"></script>
+</
