@@ -36,11 +36,10 @@
     /* Stylowanie słońca */
     .sun {
       position: absolute;
-      top: 20%;
-      left: 80%;
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
+      top: 20px;
+      left: 20px;
+      width: 150px;
+      height: 150px;
       background-image: url('https://emojicdn.elk.sh/🌞');
       background-size: cover; /* Dopasuj tło do rozmiaru okna przeglądarki */
       z-index: -1; /* Wysuwamy słońce na dół, za inną zawartość */
@@ -49,8 +48,8 @@
 
     /* Animacja obrotu słońca */
     @keyframes sunAnimation {
-      0% { transform: translate(-50%, -50%) rotate(0); }
-      100% { transform: translate(-50%, -50%) rotate(360deg); }
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
     }
 
     /* Stylowanie plaży */
@@ -59,7 +58,7 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 30%;
+      height: 40%;
       background-color: #f1c40f; /* Kolor piasku */
       z-index: -1; /* Wysuwamy plażę na dół, za inną zawartość */
     }
@@ -86,7 +85,7 @@
     /* Dodatkowe style dla mapy */
     iframe {
       width: 100%; /* Szerokość mapy */
-      height: 400px; /* Wysokość mapy */
+      height: 300px; /* Wysokość mapy */
     }
   </style>
 </head>
@@ -105,7 +104,7 @@
           scrolling="no" 
           marginheight="0" 
           marginwidth="0" 
-          src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Stefana%20%C5%BBeromskiego%2020,%2072-420%20Dziwn%C3%B3w+(Happy%20Wind%20Pokoje%20Go%C5%9Bcinne%20nad%20morzem)&amp;t=k&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+          src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Stefana%20%C5%BBeromskiego%2020,%2072-420%20Dziwn%C3%B3w+(Happy%20Wind%20Pokoje%20Go%C5%9Bcinne%20nad%20morzem)&amp;t=k&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
         </iframe>
       </div>
       <section>
